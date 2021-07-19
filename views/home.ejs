@@ -1,0 +1,32 @@
+<!--challenge 3:adding header file to home.ejs, challenge 4: adding header and footer files to partails folder -->
+<%- include("partials/header"); %>
+<!-- challenge 1 -->
+<h1>Home</h1>
+<!-- chellange2 -->
+<p><%=startingContent%></p>
+<!--challenge 13-->
+<%#console.log(posts)%>
+<%#  for(var i=0;i< posts.length;i++) {  %>
+ <%#  console.log(posts[i].title) %>
+<%# } %>
+
+<!--challenge 14-->
+
+<% posts.forEach(function(post) { %>
+  <h1><%=post.title%></h1>
+  <!--challenge 20-->
+<!--  <p>post.body.substring(0,100)</p> -->
+  <p>
+    <%=post.body.slice(0,100)+"..."%>
+    <a href="/posts/<%=post._id%>">Read More</a>
+  </p>
+
+
+<%});%>
+
+<!--challenge 14-->
+
+
+
+<!--challenge 3:adding footer file to home.ejs, challenge 4: adding header and footer files to partails folder -->
+<%- include("partials/footer"); %>
